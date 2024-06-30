@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./images/favicon.png" type="image/png">
+</head>
+<body>
+    <div id="intro">
+        <img src="./images/intro.png" alt="Intro Image" id="introImage">
+        <h1>
+            hello. im rosalie. please help me huwag maligo. dodge the water, 143 times then i'll give you my Anniversary love letter. Thanks.
+        </h1>
+    </div>
+    <div id="jumpCount">SCORE<br>0</div>
+    <div class="game-container">
+        <img src="./images/cat.jpg" alt="Cute Cat" class="cat">
+        <img src="./images/ghost.jpg" alt="Obstacle" class="obstacle">
+    </div>
+    <a href="#" id="jumpButton">
+        <img src="./images/jump button.png" alt="Jump Button">
+    </a>
+    <div id="game-over" style="display: none;">
+        <img src="./images/angry.png" alt="angry-cat">
+    </div>
+
+    <div id="randomTextContainer"></div>
+
+    <audio id="jumpSound">
+        <source src="./sound/meow.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="collisionSound">
+        <source src="./sound/bonk.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

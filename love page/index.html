@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <link rel="icon" href="./images/favicon-2.png" type="image/png">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@100..400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Playwrite+MX:wght@100..400&display=swap');
+        
+        /* CSS for hiding the opened letter initially */
+        h1 {
+            font-family: "Playwrite MX", cursive;
+            font-size: 6vw; /* Responsive font size */
+            line-height: 1.2; /* Adjust line height */
+            margin-bottom: 10px; /* Add some bottom margin */
+        }
+
+        p {
+            font-family: "Arimo", sans-serif;
+            font-size: 3vw; /* Responsive font size */
+            line-height: 1.2; /* Adjust line height */
+            margin-top: 10px; /* Add some top margin */
+        }
+
+        .opened-letter {
+            display: none;
+        }
+
+        #unopened-mail, #letter {
+            max-width: 50%; /* Ensure images don't exceed their container */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            margin: 0 auto 10px; /* Center horizontally with 10px margin below */
+        }
+
+        #opened-mail {
+            max-width: 25%; /* Ensure images don't exceed their container */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            margin: 0 auto 10px; /* Center horizontally with 10px margin below */
+        }
+
+        h1, p {
+            text-align: center;
+            color: #F9616F;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content to the top of the viewport */
+            align-items: center;
+            height: 100vh; /* Set height to full viewport height */
+            margin: 0;
+            padding-top: 20px; /* Add some padding at the top */
+            overflow: hidden; /* Prevent scrolling */
+            background-color: #f0f0f0; /* Background color for better visibility */
+        }
+    </style>
+    <script>
+        // JavaScript function to toggle between unopened and opened letter images
+        function toggleLetter() {
+            var unopenedMail = document.getElementById('unopened-mail');
+            var openedMail = document.getElementById('opened-mail');
+            var letter = document.getElementById('letter');
+
+            // Toggle visibility of unopened and opened mail images
+            if (unopenedMail.style.display !== 'none') {
+                unopenedMail.style.display = 'none';
+                openedMail.style.display = 'block';
+                letter.style.display = 'block'; // Display the letter
+            } else {
+                unopenedMail.style.display = 'block';
+                openedMail.style.display = 'none';
+                letter.style.display = 'none'; // Hide the letter
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Letter</h1>
+    <p>FOR YOU</p>
+    <!-- Unopened mail image -->
+    <img id="unopened-mail" src="./images/1.gif" alt="unopened mail" onclick="toggleLetter()">
+    <!-- Letter image (initially hidden) -->
+    <img id="letter" src="./images/letter-1.png" alt="letter" class="opened-letter" style="display: none;">
+    <!-- Opened mail image (initially hidden) -->
+    <img id="opened-mail" src="./images/2.gif" alt="opened mail" style="display: none;">
+
+    <!-- Audio element for automatic playback -->
+    <audio autoplay loop>
+        <source src="./sound/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</body>
+</html>
